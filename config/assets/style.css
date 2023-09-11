@@ -1,0 +1,16 @@
+input {
+    width: 100%;
+    border: 1px solid lightblue;
+    padding: 10px!important;
+    margin: 10px!important;
+    border-radius: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    display: block;
+    direction: ltr;
+    margin: 10px!important;
+}
