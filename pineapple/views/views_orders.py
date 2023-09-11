@@ -18,7 +18,7 @@ def order_create_view(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('order-list')
+            return redirect('pineapple:order-list')
     else:
         try:
             form = OrderForm()
@@ -34,7 +34,7 @@ def order_update_view(request, pk):
         form = OrderForm(request.POST, instance=order)
         if form.is_valid():
             form.save()
-            return redirect('order-list')
+            return redirect('pineapple:order-list')
     else:
         try:
             form = OrderForm(instance=order)

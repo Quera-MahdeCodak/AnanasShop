@@ -22,7 +22,7 @@ def pineapple_create_view(request):
         form = PineappleForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('pineapple-list')
+            return redirect('pineapple:pineapple-list')
     else:
         try:
             form = PineappleForm()
@@ -38,7 +38,7 @@ def pineapple_update_view(request, pk):
         form = PineappleForm(request.POST, instance=pineapple)
         if form.is_valid():
             form.save()
-            return redirect('pineapple-list')
+            return redirect('pineapple:pineapple-list')
     else:
         try:
             form = PineappleForm(instance=pineapple)

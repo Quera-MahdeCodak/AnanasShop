@@ -13,7 +13,7 @@ def comment_create_view(request):
         form = CommentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('comment-list')
+            return redirect('pineapple:comment-list')
     else:
         try:
             form = CommentForm()

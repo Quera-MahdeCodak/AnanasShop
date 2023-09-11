@@ -9,7 +9,7 @@ def subscription_create_view(request):
         form = SubscriptionForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('subscription-list')
+            return redirect('pineapple:subscription-list')
     else:
         try:
             form = SubscriptionForm()

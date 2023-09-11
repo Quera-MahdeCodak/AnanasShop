@@ -17,7 +17,7 @@ def seller_create_view(request):
         form = SellerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('seller-list') 
+            return redirect('pineapple:seller-list') 
     else:
         try:
             form = SellerForm()
@@ -34,7 +34,7 @@ def seller_update_view(request, certificate_code):
         form = SellerForm(request.POST, instance=seller)
         if form.is_valid():
             form.save()
-            return redirect('seller-list')
+            return redirect('pineapple:seller-list')
     else:
         try:
             form = SellerForm(instance=seller)
