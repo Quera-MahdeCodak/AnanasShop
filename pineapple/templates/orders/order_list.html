@@ -3,5 +3,22 @@
 
 {% block title %}لیست سفارشات{% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td>نام سفارش</td>
+            <td>نام فروشنده</td>
+            <td>وزن</td>
+            <td>قیمت کل</td>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.name }}</td>
+                <td>{{ order.pineapple.seller.name }}</td>
+                <td>{{ order.weight_kg }}</td>
+                <td>{% widthratio order.weight_kg 1 order.pineapple.price_toman %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

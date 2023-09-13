@@ -23,9 +23,9 @@ pineapple_patterns = [
 ]
 order_pattern =[
     path('orders', views.order_list_view,name='order-list'),
-    path('order/detail/<int:orderId>', views.order_detail_view,name='order-detail'),
+    path('order/detail/<int:pk>', views.order_detail_view,name='order-detail'),
     path('order/create', views.order_create_view,name='order-create'),
-    path('order/update/<int:orderId>', views.order_update_view,name='order-update'),
+    path('order/update/<int:pk>', views.order_update_view,name='order-update'),
 ]
 
 urlpatterns = [
