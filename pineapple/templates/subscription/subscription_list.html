@@ -5,5 +5,18 @@
 لیست خبرنامه
 {% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+
+{% block content %}
+    <table>
+    <tr>
+        <td>نام</td>
+        <td>شماره موبایل</td>
+    </tr>
+    {% for subscription in subscriptions %}
+        <tr>
+            <td>{{ subscription.name }}</td>
+            <td>{{ subscription.phone_number }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}

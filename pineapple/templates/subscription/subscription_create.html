@@ -2,8 +2,15 @@
 {% load static %}
 
 {% block title %}
-ثبت نام در خبرنامه
+    ثبت نام در خبرنامه
 {% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+
+    <form action="/subscription/create" method="POST">
+        {% csrf_token %}
+        <p>{{ form.as_p }}</p>
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock content %}
