@@ -16,10 +16,10 @@ seller_patterns = [
 ]
 pineapple_patterns = [
     path('pineapples', views.pineapple_list_view, name='pineapple-list'),
-    path('pineapple/detail/<int:pineapple_id>', views.pineapple_detail_view, name='pineapple-detail'),
+    path('pineapple/detail/<int:pk>', views.pineapple_detail_view, name='pineapple-detail'),
     path('pineapple/create', views.pineapple_create_view, name='pineapple-create'),
-    path('pineapple/update/<int:pineapple_id>', views.pineapple_update_view, name='pineapple-update'),
-    path('seller/<str:certificate_code>/pineapples', views.seller_pineapple_list_view, name='pineapple-update'),
+    path('pineapple/update/<int:pk>', views.pineapple_update_view, name='pineapple-update'),
+    path('seller/<str:seller_id>/pineapples', views.seller_pineapple_list_view, name='pineapple-update'),
 ]
 order_pattern =[
     path('orders', views.order_list_view,name='order-list'),

@@ -2,7 +2,12 @@
 {% load static %}
 
 
-{% block title %}<!-- Add your Title Here -->{% endblock title %}
+{% block title %}آناناس های فروشنده{% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+    {% for pineapple in pineapples %}
+        {{ pineapple.price_toman }},
+        {{ pineapple.seller.certificate_code }}
+        <br>
+    {% endfor %}
+{% endblock content %}

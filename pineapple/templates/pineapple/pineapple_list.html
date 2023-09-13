@@ -3,7 +3,20 @@
 
 
 
-{% block title %}<!-- Add your Title Here -->{% endblock title %}
+{% block title %}آناناس فروشی آقای زحمتکش{% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+
+{% block content %}
+    <table>
+    <tr>
+        <td>کد فروشنده</td>
+        <td>قیمت</td>
+    </tr>
+    {% for pineapple in pineapples %}
+        <tr>
+            <td>{{ pineapple.seller.certificate_code }}</td>
+            <td>{{ pineapple.price_toman }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}
