@@ -2,7 +2,12 @@
 {% load static %}
 
 
-{% block title %}<!-- Add your Title Here -->{% endblock title %}
+{% block title %}بروزرسانی فروشنده{% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+    <form method="POST" action={% url 'pineapple:seller-update' seller.certificate_code %}>
+        {% csrf_token %}
+        <p>{{ form.as_p }}</p>
+        <input type="Submit" value="submit">
+    </form>
+{% endblock content %}

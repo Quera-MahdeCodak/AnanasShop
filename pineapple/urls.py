@@ -10,20 +10,20 @@ subscription_patterns = [
 ]
 seller_patterns = [
     path('sellers', views.seller_list_view,name='seller-list'),
-    path('seller/<str:certificateCode>', views.seller_detail_view,name='seller-detail'),
+    path('seller/detail/<str:certificate_code>', views.seller_detail_view,name='seller-detail'),
     path('seller/create', views.seller_create_view,name='seller-create'),
-    path('seller/update/<str:certificateCode>', views.seller_update_view,name='seller-update'),
+    path('seller/update/<str:certificate_code>', views.seller_update_view,name='seller-update'),
 ]
 pineapple_patterns = [
     path('pineapples', views.pineapple_list_view, name='pineapple-list'),
-    path('pineapple/<int:pineappleId>', views.pineapple_detail_view, name='pineapple-detail'),
+    path('pineapple/detail/<int:pineapple_id>', views.pineapple_detail_view, name='pineapple-detail'),
     path('pineapple/create', views.pineapple_create_view, name='pineapple-create'),
-    path('pineapple/update/<int:pineappleId>', views.pineapple_update_view, name='pineapple-update'),
+    path('pineapple/update/<int:pineapple_id>', views.pineapple_update_view, name='pineapple-update'),
     path('seller/<str:certificate_code>/pineapples', views.seller_pineapple_list_view, name='pineapple-update'),
 ]
 order_pattern =[
     path('orders', views.order_list_view,name='order-list'),
-    path('order/<int:orderId>', views.order_detail_view,name='order-detail'),
+    path('order/detail/<int:orderId>', views.order_detail_view,name='order-detail'),
     path('order/create', views.order_create_view,name='order-create'),
     path('order/update/<int:orderId>', views.order_update_view,name='order-update'),
 ]

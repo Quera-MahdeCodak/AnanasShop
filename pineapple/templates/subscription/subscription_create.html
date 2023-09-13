@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    <form action="/subscription/create" method="POST">
+    <form method="POST" action={% url 'pineapple:subscription-create' %}>
         {% csrf_token %}
         <p>{{ form.as_p }}</p>
         <input type="submit" value="Submit">
