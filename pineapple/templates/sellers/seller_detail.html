@@ -5,4 +5,16 @@
 {% block title %}<!-- Add your Title Here -->{% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+
+<div class="text-right">
+    <dl>
+        <dt class="p-2 font-bold">نام آناناس فروش    </dt>
+        <dd class="pr-10">{{seller.name}}</dd>
+        <dt class="p-2 pt-4 font-bold">کد گواهی کسب</dt>
+        <dd class="pr-10">{{seller.certificate_code}}</dd>
+        <dt class="p-2 pt-4 font-bold">آدرس کامل فروشنده</dt>
+        <dd class="pr-10">{{seller.address}}</dd>
+    </dl>
+</div>
+{% endblock content %}
