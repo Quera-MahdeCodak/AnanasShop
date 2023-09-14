@@ -28,5 +28,14 @@ class OrderForm:
 class SubscriptionForm:
     pass
 
-class CommentForm:
-    pass
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
+    def clean_text(self):
+        text = self.cleaned_data['text']
+        if len(text) < 10:
+            raise forms.ValidationError('این فیلد باید بیشتر از ۱۰ کاراکتر باشد.')
+        return text
+
