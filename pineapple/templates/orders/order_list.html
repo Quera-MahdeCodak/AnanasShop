@@ -4,4 +4,30 @@
 {% block title %}لیست سفارشات{% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+
+
+<div class="flex justify-center items-center ml-5 p-5 even:bg-gray-200 odd:bg-gray-100">
+    <div class="w-1/6">نام سفارش‌دهنده</div>
+    <div class="w-1/6">نام فروشنده</div>
+    <div class="w-1/6">وزرن کالا</div>
+    <div class="w-1/6">قیمت نهایی کالا</div>
+</div>
+{% for obj in orders %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-purple-300 odd:bg-purple-200">
+    <div class="w-1/6">
+        {{obj.name}}
+    </div>
+    <div class="w-1/6">
+        {{obj.pineapple.seller.name}}
+    </div>
+    <div class="w-1/6">
+        {{obj.weight_kg}}
+    </div>
+    <div class="w-1/6">
+        {{obj.pineapple.price_toman}}
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
