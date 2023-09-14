@@ -2,7 +2,16 @@
 {% load static %}
 
 
-{% block title %}<!-- Add your Title Here -->{% endblock title %}
+{% block title %}صفحه‌ی داخلی آناناس{% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+<div class="text-right">
+    <dl>
+        <dt class="p-2 font-bold">قیمت آناناس</dt>
+        <dd class="pr-10">{{pineapple.price_toman}}</dd>
+        <dt class="p-2 pt-4 font-bold">کد گواهی کسب</dt>
+        <dd class="pr-10">{{pineapple.seller.certificate_code}}</dd>
+    </dl>
+</div>
+{% endblock content %}
