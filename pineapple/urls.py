@@ -13,6 +13,12 @@ urlpatterns = [
     path('seller/create', views.seller_create_view, name='seller-create'),
     path('seller/detail/<str:certificate_code>', views.seller_detail_view, name='seller-detail'),
     path('seller/update/<str:certificate_code>', views.seller_update_view, name='seller-update'),
+
+    path('pineapples' ,  views.pineapple_list_view , name = 'pineapple-list'),
+    path('pineapple/<int:pk>/detail' ,  views.pineapple_detail_view , name='pineapple-detail'),
+    path('pineapple/create' ,  views.pineapple_create_view , name='pineapple-create'),
+    path('pineapple/<int:pk>/update' ,  views.pineapple_update_view , name='pineapple-update'),
+    path('seller/<int:seller_id>/pineapples' ,  views.seller_pineapple_list_view , name='seller-pineapple-list'),
 ]
 
 if settings.DEBUG:
