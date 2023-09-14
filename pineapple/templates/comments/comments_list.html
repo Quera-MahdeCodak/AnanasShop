@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}لیست کامنت ها{% endblock title %}
+
+<!-- Add your Content Here -->
+{% block content %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-gray-200 odd:bg-gray-100">
+    <div class="w-1/6">  نام</div>
+    <div class="w-1/6">فروششنده مورد التفات</div>
+    <div class="w-4/6">متن</div>
+</div>
+{% for obj in comments %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-orange-300 odd:bg-orange-200">
+    <div class="w-1/6">
+        {{obj.name}}
+    </div>
+    <div class="w-1/6">
+        {{obj.seller.name}}
+    </div>
+    <div class="w-4/6">
+        {{obj.text}}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
