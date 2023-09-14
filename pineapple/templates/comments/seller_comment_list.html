@@ -5,10 +5,13 @@
 {% block title %}لیست نظرات فروشنده{% endblock title %}
 
 {% block content %}
-    {% for comment in comments %}
-        {{ comment.name }}
-        {{ comment.seller }}
-        {{ comment.text }}
-        <br>
-    {% endfor %}
+    <table>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.name }}</td>
+                <td>{{ comment.seller.name }}</td>
+                <td>{{ comment.text }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock content %}

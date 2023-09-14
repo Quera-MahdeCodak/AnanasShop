@@ -6,8 +6,8 @@
 
 {% block content %}
     <form method="POST" action={% url 'pineapple:pineapple-update' pineapple.id %}>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
     </form>
 {% endblock content %}
