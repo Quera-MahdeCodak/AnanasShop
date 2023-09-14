@@ -19,8 +19,19 @@ class SellerForm(forms.ModelForm):
             raise forms.ValidationError('این فیلد باید بیشتر از ۱۰ کاراکتر باشد.')
         return address
 
-class PineappleForm:
-    pass
+
+class PineappleForm(forms.ModelForm):
+    class Meta:
+        model = Pineapple
+        fields = '__all__'
+
+    def clean_price_toman(self):
+        price_toman = self.cleaned_data.get('price_toman')
+        if price_toman < 1000:
+            raise forms.ValidationError("قیمت نباید کمتر از هزار تومان باشد.")
+        if price_toman > 1000000:
+            raise forms.ValidationError("قیمت نباید از یک میلیون تومان بیشتر باشد.")
+        return price_toman
 
 class OrderForm:
     pass
