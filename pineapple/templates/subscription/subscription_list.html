@@ -6,4 +6,10 @@
 {% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+{% for obj in subscriptions %}
+<div class="justify-center items-center text-right ml-5 p-5 even:bg-gray-200 odd:bg-gray-100">
+    {{obj.name}} - {{obj.phone_number}}
+</div>
+{% endfor %}
+{% endblock content %}
