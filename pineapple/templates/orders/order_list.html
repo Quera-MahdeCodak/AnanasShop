@@ -25,7 +25,7 @@
         {{obj.weight_kg}}
     </div>
     <div class="w-1/6">
-        {{obj.pineapple.price_toman}}
+        {% widthratio obj.pineapple.price_toman 1 obj.weight_kg %}
     </div>
 </div>
 {% endfor %}
