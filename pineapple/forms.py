@@ -46,8 +46,17 @@ class OrderForm:
         return weight_kg
 
 
-class SubscriptionForm:
-    pass
+class SubscriptionForm(forms.ModelForm):
+    class Meta:
+        model = Subscription
+        fields = "__all__"
+    
+    def clean_phone_number(self):
+        reg = r"^09[0-9]{9}$"
+        phone_number = self.cleaned_data['phone_number']
+        if not re.match(reg , phone_number):
+            raise forms.ValidationError('شماره تلفن اشتباه است. شماره تلفن باید ۱۱ رقم باشد و با ۰۹ شروع شود.')
+        return phone_number   
 
 class CommentForm(forms.ModelForm):
     class Meta:
