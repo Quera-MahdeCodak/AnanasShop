@@ -5,4 +5,25 @@
 {% block title %}<!-- Add your Title Here -->{% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-gray-200 odd:bg-gray-100">
+    <div class="text-right  w-1/6">نام</div>
+    <div class="w-3/6">کد شناسایی</div>
+    <div class="w-3/6">آدرس</div>
+</div>
+{% for obj in sellers %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-green-200 odd:bg-green-100">
+    <div class="text-right w-1/6">
+        {{obj.name}}
+    </div>
+    <div class="w-3/6">
+        {{obj.certificate_code}}
+    </div>
+    
+    <div class="w-3/6">
+        {{obj.address|slice:20}}...
+    </div>
+</div>
+
+{% endfor %}
+{% endblock content %}
