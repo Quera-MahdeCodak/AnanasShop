@@ -34,7 +34,7 @@ class PineappleForm(forms.ModelForm):
             raise forms.ValidationError("قیمت نباید از یک میلیون تومان بیشتر باشد.")
         return price_toman
 
-class OrderForm:
+class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = '__all__'
