@@ -5,5 +5,9 @@
 لیست خبرنامه
 {% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+
+{% block content %}
+    {% for subscription in subscriptions %}
+    <p>{{ subscription.name }} {{ subscription.phone_number }}</p>
+    {% endfor %}
+{% endblock content %}
