@@ -25,6 +25,7 @@ class PineappleForm(forms.ModelForm):
         model = Pineapple
         fields = '__all__'
 
+
     def clean_price_toman(self):
         price_toman = self.cleaned_data.get('price_toman')
         if price_toman < 1000:
@@ -34,7 +35,16 @@ class PineappleForm(forms.ModelForm):
         return price_toman
 
 class OrderForm:
-    pass
+    class Meta:
+        model = Order
+        fields = '__all__'
+    
+    def clean_weight_kg(self):
+        weight_kg = self.cleaned_data.get('weight_kg')
+        if weight_kg > 100:
+            raise forms.ValidationError("۱۰۰ کیلو آناناس میخوای چیکار؟ مشکل داری؟")
+        return weight_kg
+
 
 class SubscriptionForm:
     pass
