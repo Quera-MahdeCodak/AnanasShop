@@ -6,4 +6,19 @@
 {% block title %}<!-- Add your Title Here -->{% endblock title %}
 
 <!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-gray-200 odd:bg-gray-100">
+    <div class="text-right  w-1/6">قیمت هر آناناس</div>
+    <div class="w-3/6">کد گواهی فروشنده‌ی این آناناس    </div>
+</div>
+{% for obj in pineapples %}
+<div class="flex justify-center items-center ml-5 p-5 even:bg-yellow-100 odd:bg-yellow-200">
+    <div class="text-right w-1/6">
+        {{obj.price_toman}}
+    </div>
+    <div class="w-3/6">
+        {{obj.seller.certificate_code}}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
