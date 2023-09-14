@@ -19,6 +19,11 @@ urlpatterns = [
     path('pineapple/create' ,  views.pineapple_create_view , name='pineapple-create'),
     path('pineapple/<int:pk>/update' ,  views.pineapple_update_view , name='pineapple-update'),
     path('seller/<int:seller_id>/pineapples' ,  views.seller_pineapple_list_view , name='seller-pineapple-list'),
+
+    path('orders',views.order_list_view,name="order-list"),
+    path('order/detail/<int:pk>',views.order_detail_view,name="order-detail"),
+    path('order/create',views.order_create_view,name="order-create"),
+    path('order/update/<int:pk>',views.order_update_view,name="order-update"),
 ]
 
 if settings.DEBUG:
