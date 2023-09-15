@@ -6,7 +6,7 @@
 
 
 {% block content %}
-    <form method="POST" action={% url 'pineapple:seller-create' %}>
+    <form method="POST" action="">
         {% csrf_token %}
         <p>{{ form.as_p }}</p>
         <input value="submit" type="Submit">

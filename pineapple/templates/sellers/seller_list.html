@@ -14,7 +14,7 @@
     </tr>
     {% for seller in sellers %}
         <tr>
-            <td><a href={% url "pineapple:seller-detail" seller.certificate_code %}>{{ seller.name }}</a></td>
+            <td><a href={% url "seller:seller-detail" seller.certificate_code %}>{{ seller.name }}</a></td>
             <td>{{ seller.certificate_code }}</td>
             <td>{{ seller.address|truncatechars:20 }}</td>
         </tr>
