@@ -2,7 +2,21 @@
 {% load static %}
 
 
-{% block title %}<!-- Add your Title Here -->{% endblock title %}
+{% block title %}صفحه داخلی سفارش{% endblock title %}
 
-<!-- Add your Content Here -->
-{% block content %}{% endblock content %}
+{% block content %}
+    <table>
+        <tr>
+            <td>نام سفارش دهنده</td>
+            <td>نام فروشنده</td>
+            <td>وزن کالا</td>
+            <td>قیمت نهایی کالا</td>
+        </tr>
+        <tr>
+            <td>{{ order.name }}</td>
+            <td>{{ order.pineapple.seller.name }}</td>
+            <td>{{ order.weight_kg }}</td>
+            <td>{% widthratio order.weight_kg 1 order.pineapple.price_toman %}</td>
+        </tr>
+    </table>
+{% endblock content %}
